@@ -83,7 +83,7 @@ install_elk_versions() {
 
 # Function to create certificates and deploy
 create_and_deploy_certificates() {
-  local_ip=$(hostname -I | cut -d' ' -f1)
+  local_ip="localhost"
   instances_file="/usr/share/elasticsearch/instances.yml"
 
   log "${YELLOW}Creating and deploying certificates...${NC}"
@@ -130,7 +130,7 @@ EOF
 
 # Function to configure Elasticsearch
 configure_elasticsearch() {
-  local_ip=$(hostname -I | cut -d ' ' -f1)
+  local_ip="localhost"
   elasticsearch_config="/etc/elasticsearch/elasticsearch.yml"
 
   log "${YELLOW}Configuring Elasticsearch...${NC}"
@@ -166,7 +166,7 @@ EOF
 
 # Function to configure Kibana
 configure_kibana() {
-  local_ip=$(hostname -I | cut -d' ' -f1)
+  local_ip="localhost"
   kibana_config="/etc/kibana/kibana.yml"
 
   log "${YELLOW}Configuring Kibana...${NC}"
@@ -204,7 +204,7 @@ EOF
 
 # Function to configure Filebeat
 configure_filebeat() {
-  local_ip=$(hostname -I | cut -d' ' -f1)
+  local_ip="localhost"
   elastic_ip="$local_ip"  # Use the system's IP address
   filebeat_config="/etc/filebeat/filebeat.yml"
   elastic_password=""
