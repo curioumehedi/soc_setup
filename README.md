@@ -48,7 +48,11 @@ Before running the script, please ensure that your system meets the following re
 If your system doesn't meet these requirements, the script will issue a warning and allow you to proceed at your own risk.
 
 ## Usage
+0. Install necessary packages 
 
+   ```bash
+   apt install lolcat figlet net-tools git curl -y
+   
 1. Clone this repository to your local machine:
 
    ```bash
