@@ -56,7 +56,7 @@ If your system doesn't meet these requirements, the script will issue a warning 
 1. Clone this repository to your local machine:
 
    ```bash
-   git clone https://github.com/samiul008ghub/soc_setup/
+   git clone https://github.com/curioumehedi/soc_setup/
 
 2. Navigate to the repository's directory:
    ```bash
