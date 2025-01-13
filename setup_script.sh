@@ -153,6 +153,9 @@ main() {
   if [ "$install_wazuh_choice" == "y" ]; then
     install_wazuh
   fi
+  
+  chmod +x hold_packages.sh
+  ./hold_packages.sh
 
   figlet "All done!" | lolcat
 }
