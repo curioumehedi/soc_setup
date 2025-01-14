@@ -83,7 +83,7 @@ install_elk_versions() {
 
 # Function to create certificates and deploy
 create_and_deploy_certificates() {
-  local_ip="localhost"
+  local_ip="127.0.0.1"
   instances_file="/usr/share/elasticsearch/instances.yml"
 
   log "${YELLOW}Creating and deploying certificates...${NC}"
