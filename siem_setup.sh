@@ -80,9 +80,22 @@ install_elk_versions() {
 
   log_success "Elasticsearch, Kibana, and Filebeat version $elk_version installed successfully."
 }
+# Ensure Elasticsearch directory exists
+ensure_elasticsearch_directory() {
+  local es_directory="/usr/share/elasticsearch"
+
+  if [ ! -d "$es_directory" ]; then
+    log "${YELLOW}Elasticsearch directory not found. Creating it...${NC}"
+    sudo mkdir -p "$es_directory"
+    sudo chown -R elasticsearch:elasticsearch "$es_directory"
+    log_success "Elasticsearch directory created successfully."
+  fi
+}
 
 # Function to create certificates and deploy
 create_and_deploy_certificates() {
+  ensure_elasticsearch_directory
+
   local_ip="127.0.0.1"
   instances_file="/usr/share/elasticsearch/instances.yml"
 
